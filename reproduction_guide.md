@@ -16,32 +16,29 @@ For exact paper reproduction, we recommend installing `jpegio==0.2.4`.
 
 To reproduce results, download the data we provide before training:
 
-- Generated pretraining data (Hugging Face): `https://huggingface.co/datasets/MohamedDhouib1/TDoc-2.8M`
-- Main Drive folder (TDoc): `https://drive.google.com/drive/folders/1_xQ1ti6--e7QMY5apBUk7db1xX31qe-A?usp=sharing`
+- Generated pretraining data TDoc-2.8M (Hugging Face): `https://huggingface.co/datasets/MohamedDhouib1/TDoc-2.8M`
 - Finetuning data root: `https://drive.google.com/drive/folders/1jtB9rmdUww_zJ6jGg5qrjujgRfLVv3vV?usp=sharing`
 - Evaluation data root: `https://drive.google.com/drive/folders/1HkzytEz8BM7p2QxiyKZYQWSYtZbW_HMu?usp=sharing`
 
 ## 1) Model Initialization and Backbone Weights
 
-To reproduce results, follow the initialization logic exactly where it is implemented in code.
+To reproduce results in the paper, models needs to be initialized in the same way.
+First download initialization weights from: `https://drive.google.com/drive/folders/1zEYzmVGcWopJhCOjeEosSqb5UL2ZumwD`
+
+Then set `pretrained_model_name_or_path` in pretraining configs for DTD and FFDN to the corresponding downloaded checkpoint path.
+For ASCFormer, CATNet, and PSCC-Net, initialization uses the fixed model-local files listed below.
 
 | Model | Initialization location in code | Default local files used by model code |
 |-------|----------------------------------|-----------------------------------------|
 | ASCFormer | `training/models/ascformer/ascformer_model.py` | `training/models/ascformer/weights/mit_b2_20220624-66e8bf70.pth` |
 | CATNet | `training/models/catnet/model.py` | `training/models/catnet/weights/CAT_full_v2.pth` |
 | PSCC-Net | `training/models/psccnet/model.py` | `training/models/psccnet/checkpoint/HRNet_checkpoint/HRNet.pth`, `training/models/psccnet/checkpoint/NLCDetection_checkpoint/NLCDetection.pth`, `training/models/psccnet/checkpoint/DetectionHead_checkpoint/DetectionHead.pth` |
-| DTD | `training/models/DTD/dtd.py` | `training/models/DTD/weights/vph_imagenet.pt`, `training/models/DTD/weights/swin_imagenet.ckpt` |
-| FFDN | `training/models/ffdn/timm_backbone.py` | no automatic backbone load in current code (starts from scratch unless a checkpoint is explicitly loaded) |
 
-Weights can be stored anywhere on disk.
-If you want to initialize from a specific checkpoint, set `pretrained_model_name_or_path` in the config to that path.
 
-Weights download links:
+For all models, when `pretrained_model_name_or_path` is set in config, startup should print:
 
-- All weights root: `https://drive.google.com/drive/folders/1txtCMr2ZGq1LYHclrMip3I3tOmeHN5IH?usp=sharing`
-- Crop quality network pretrained weights (`G_theta`): `https://drive.google.com/drive/folders/1r0YtzJt1D6o_6zzBLsZzKKwas-8L8jnm?usp=sharing`
-- Crop similarity network pretrained weights (`F_theta`): `https://drive.google.com/drive/folders/1L1vPIlkrlWp-e3Xjb6tqj8Ql3NtDSvUO?usp=sharing`
-- Tampering localization model weights (pretrained and finetuned): `https://drive.google.com/drive/folders/14M5GsbJTIXIJ9jlhZkH4bSOa43Uj4cwp?usp=sharing`
+- `Loading weights from ...`
+- `Weights loaded`
 
 ## 2) Pretraining on Generated Data
 
@@ -49,15 +46,15 @@ Open the pretraining config for the chosen model (for example `training/configs/
 
 Set:
 
-- `dataset_name_or_path` as a list of `[images_folder, masks_folder]` pairs.
-- `pretrained_model_name_or_path` depending on your intent:
-  - `""` for scratch/model-default initialization.
-  - a path if you want to load weights before pretraining.
+- `dataset_name_or_path` as a list of `[images_folder, masks_folder]` that point to the image and mask folders for the TDoc-2.8M dataset (`https://huggingface.co/datasets/MohamedDhouib1/TDoc-2.8M`). Note: run the script that decompresses the downloaded Hugging Face data (provided along the shards) so `images/` and `masks/` folders are created.
+- `pretrained_model_name_or_path`:
+  - DTD and FFDN: set this to the downloaded weights path from the Drive link above.
+  - ASCFormer, CATNet, and PSCC-Net: keep this empty for backbone initialization and place weights at the fixed local paths shown in section 1.
 
 Example:
 
 ```yaml
-pretrained_model_name_or_path: ""
+pretrained_model_name_or_path: "/path/to/downloaded/model_weights.pth"
 dataset_name_or_path:
   - ["/path/to/generated/images", "/path/to/generated/masks"]
 ```
@@ -147,3 +144,5 @@ python training/infer.py \
 
 - `DATASET_NAME_OR_PATH`, `MODEL_NAME`, and `PRETRAINED_PATH` environment variables can override config values in `training/train.py`.
 - To reproduce results faithfully, use the initialization locations listed in section 1.
+- Paper results were produced with `jpegio==0.2.4` for JPEG quantization-table extraction, so to ensure 100 percent reproducibility, install `jpegio==0.2.4`.
+- The code also provides a Pillow fallback as an easier alternative, which can be faster to run and should give same results. Jpegio is not included in the environment.yaml file, so you need to install it yourself.
