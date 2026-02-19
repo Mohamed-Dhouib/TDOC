@@ -80,7 +80,7 @@ See [`generation_pipeline/README.md`](generation_pipeline/README.md).
 ### 4) Train or finetune detectors
 
 Training and finetuning instructions are in [`training/README.md`](training/README.md).
-You can start from the provided pretrained detector weights in [weights root](https://drive.google.com/drive/folders/1txtCMr2ZGq1LYHclrMip3I3tOmeHN5IH?usp=sharing) and [tampering localization models](https://drive.google.com/drive/folders/14M5GsbJTIXIJ9jlhZkH4bSOa43Uj4cwp?usp=sharing), then finetune on your own dataset.
+You can start from the provided pretrained detector weights in [tampering localization models](https://drive.google.com/drive/folders/14M5GsbJTIXIJ9jlhZkH4bSOa43Uj4cwp?usp=sharing), then finetune on your own dataset.
 
 ### 5) Evaluation
 
