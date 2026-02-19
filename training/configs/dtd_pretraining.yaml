@@ -1,0 +1,30 @@
+model_name: "DTD"
+seed: 2024
+result_path: "./result"
+pretrained_model_name_or_path: "" # add weights here
+dataset_name_or_path: [] # format: [["/path/to/images","/path/to/masks"], ...] or ["/path/to/images","/path/to/masks"]
+train_batch_size: 8
+input_size: [1024,1024]
+lr: 1e-4
+warmup_steps: 5000
+scheduler_num_training_samples_per_cycle_and_epoch: -1
+max_epochs: 2
+num_workers: 8
+gradient_clip_val: 1.0
+data_aug_config:
+  enabled: true
+  probs:
+    spatial: 0.25
+    visual: 0.16
+    flip: 0.05
+  compression:
+    max_num: 3
+    quality_range: [75, 100]
+precision : "bf16-mixed"
+accumulate_grad_batches : 1
+check_point_every_n_step : True
+steps_per_checkpoint: 5000
+compile_model: False
+loss_pos_weight: 16.0
+class_coef: 0.1
+

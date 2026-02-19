@@ -1,0 +1,11 @@
+vert_thresh: 1
+vtol: 256
+neg_count: 256
+max_positive: 32
+max_w_g: 1024
+max_h_g: 64
+pad_to_max_shape: false
+number_of_augmented_pos: 20
+num_negative_source_csvs: 10
+augment_rest: false
+debug: false

@@ -1,0 +1,20 @@
+vert_thresh: 1
+max_w_g: 1024
+max_h_g: 64
+target_n: 32
+maximum_per_bucket: 3
+min_component_area: 4
+do_augment: true
+save_some_crops: true
+consider_edges: true
+consider_edges_cropped: true
+TOL_param: 1
+num_workers: 10
+total_jobs: 32
+target_folder_name: "crop_quality_data"
+datasets_main_path: "" #add dataset folder here
+datasets_upsample_factor:
+  dataset_1: 1
+  dataset_2: 1
+ 
+

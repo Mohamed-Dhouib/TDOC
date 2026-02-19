@@ -1,0 +1,28 @@
+result_path: "./result"
+pretrained_model_name_or_path: "" # add weights here
+train_batch_size: 1
+lr: 1e-4
+warmup_steps: 100 
+scheduler_num_training_samples_per_cycle_and_epoch: -1
+max_epochs: 1
+num_workers: 23
+val_check_interval: 1.0
+check_val_every_n_epoch: 100
+precision : "bf16-mixed"
+accumulate_grad_batches : 8
+check_point_every_n_step : True
+steps_per_checkpoint: 100
+compile_model: false
+temperature: 0.1
+pixel_budget: 65536
+datasets_main_path: "" #  add dataset folder here
+datasets_upsample_factor:
+  dataset_1: 1
+  dataset_2: 1
+ 
+small_datasets:
+  - dataset_1
+  - dataset_2
+
+
+
