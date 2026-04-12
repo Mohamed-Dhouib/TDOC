@@ -1,10 +1,11 @@
+[![arXiv](https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg)](https://arxiv.org/abs/2602.17322)
 # Leveraging Contrastive Learning for a Similarity-Guided Tampered Document Data Generation Pipeline
 
 Official repository for the paper "Leveraging Contrastive Learning for a Similarity-Guided Tampered Document Data Generation Pipeline".
 
 ## Resources
 
-- Generated pretraining dataset TDoc-2.8M (Hugging Face): `https://huggingface.co/datasets/MohamedDhouib1/TDoc-2.8M`
+- Generated pretraining dataset TDoc-2.8M: `https://huggingface.co/datasets/MohamedDhouib1/TDoc-2.8M`
 - Pretrained and finetuned weights: `https://drive.google.com/drive/folders/1txtCMr2ZGq1LYHclrMip3I3tOmeHN5IH?usp=sharing`
 - Finetuning datasets (FindIt, FindItAgain, RTM): `https://drive.google.com/drive/folders/1jtB9rmdUww_zJ6jGg5qrjujgRfLVv3vV?usp=sharing`
 - Evaluation datasets (FindIt, FindItAgain, RTM): `https://drive.google.com/drive/folders/1HkzytEz8BM7p2QxiyKZYQWSYtZbW_HMu?usp=sharing`
