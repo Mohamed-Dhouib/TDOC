@@ -10,6 +10,23 @@ Official repository for the paper "Leveraging Contrastive Learning for a Similar
 - Finetuning datasets (FindIt, FindItAgain, RTM): `https://drive.google.com/drive/folders/1jtB9rmdUww_zJ6jGg5qrjujgRfLVv3vV?usp=sharing`
 - Evaluation datasets (FindIt, FindItAgain, RTM): `https://drive.google.com/drive/folders/1HkzytEz8BM7p2QxiyKZYQWSYtZbW_HMu?usp=sharing`
 
+## Download and Extract the Dataset
+
+Download the dataset:
+
+```bash
+hf download MohamedDhouib1/TDoc-2.8M \
+  --repo-type dataset \
+  --local-dir TDoc-2.8M
+```
+
+Extract the shards:
+
+```bash
+cd TDoc-2.8M
+python reconstruct.py
+```
+
 ## Overview
 
 This repository provides tools to:
