@@ -1,0 +1,42 @@
+probability_no_manipulation: 0.2
+max_manipulations_per_doc: 5
+bbox_expansion_probability: 0.1 
+probability_only_cm_sp: 0.0
+probability_insertion: 0.025
+probability_inpainting: 0.025
+probability_target_blank_area: 0.025
+coverage_probability_target_not_character : 0.15
+coverage_probability_target_character : 0.05
+probability_splicing: 0.1 
+ratio_diff_tolerance_copy_move: 0.1
+max_w_g: 1024
+max_h_g: 64
+pixel_budget: 20000000 #reduce this if gpu out of memory
+max_number_of_sequences: 25000
+get_segments_proba: 0.5
+proba_limit_segments_length: 0.25
+max_splicing_tries: 20
+splicing_color_threshold: 6
+max_candidate_crops_splicing: 500
+write_crops: false 
+threshold_crop_quality : 0.5
+probability_deactivate_crop_quality_network:  0.15 
+probability_deactivate_crop_similarity_network : 0.05 
+threshold_crop_similarity: 0.78 
+mixed_prec: true
+use_only_image: true
+force_using_stripes_proba: 0.1
+grouped_csvs_folder: grouped_csvs
+config_path_crop_embed: "../training_contrastive/fraud.yaml"
+config_path_crop_quality: "../training_crop_quality/fraud.yaml"
+datasets_main_path: "Put dataset folder here" # this folder should contain subfolders for each dataset
+num_workers: 8
+output_folder: "generated_data"
+save_in_a_single_folder: true
+datasets_to_expand:
+  - "put dataset to expand here" #if you have a dataset where ocr crops are really tight and get rejected by G_{theta}, you may try adding it here
+
+datasets_upsample_factor:
+
+  dataset_1: 1
+  dataset_2: 25

@@ -1,0 +1,43 @@
+# model weights / checkpoints
+*.pt
+*.pth
+*.ckpt
+*.weights
+*.txt
+*.json
+
+# common image formats
+*.jpg
+*.bin
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.webp
+*.zip
+*.out
+*.err
+# optionally: large data, cache, envs
+__pycache__/
+*.egg-info/
+*.log
+.env
+training_meta/ttf/
+**/result/
+**/to_delete/
+generation_pipeline/vfinal4/images/.7357844_page_8_7645.png.CBrIn8
+generation_pipeline/vfinal4/images/.M_Img_Android_D27_L2_r35_a-5_b10_5358.png.QWMv7v
+generation_pipeline/vfinal4/images/.M_Img_Android_D27_L2_r35_a-5_b10_5358.png.WQ6OtU
+generation_pipeline/vfinal4/images/.M_Img_WP_D2_L3_r35_a-10_b-5_Mb2_black_5030.png.mnM6Uj
+generation_pipeline/vfinal4/images/.M_Img_WP_D2_L3_r35_a-10_b-5_Mb2_black_5030.png.yvElgz
+generation_pipeline/vfinal4/images/.S_Img_WP_D1_L2_r35_a0_b0_Mb1_5255.png.EtzsB6
+generation_pipeline/vfinal4/masks/.2817677_page_4_black_6950.png.HGMLzN
+generation_pipeline/vfinal4_ablation/disable_all/images/.6536186_page_3_11107.png.JXr9d5
+generation_pipeline/vfinal4_ablation/disable_all/images/.6621978_page_1_8607.png.4KKuhD
+generation_pipeline/vfinal4_ablation/disable_all/images/.6712851_page_98_black_8845.png.WrrwGm
+generation_pipeline/vfinal4_ablation/disable_all/images/.6848093_page_1_black_8564.png.52Md8x
+**/jpegio/
+generation_pipeline/left_to_ignore.yaml
+generation_pipeline/left_to_generate.yaml
+generation_pipeline/left_to_generate_all.yaml
