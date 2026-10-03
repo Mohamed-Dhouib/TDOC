@@ -9,7 +9,7 @@ TDOC addresses **document forgery detection and localization**, **document tampe
 
 ## Resources
 
-- **Dataset:** [TDoc-2.8M document tampering detection and localization dataset](https://huggingface.co/datasets/MohamedDhouib1/TDoc-2.8M)
+- **Dataset:** [TDoc-2.8M: A Document Tampering Detection and Localization Dataset](https://huggingface.co/datasets/MohamedDhouib1/TDoc-2.8M)
 - **Model weights:** [Pretrained and finetuned weights](https://drive.google.com/drive/folders/1txtCMr2ZGq1LYHclrMip3I3tOmeHN5IH?usp=sharing)
 - **Finetuning datasets:** [FindIt, FindItAgain, and RTM](https://drive.google.com/drive/folders/1jtB9rmdUww_zJ6jGg5qrjujgRfLVv3vV?usp=sharing)
 - **Evaluation datasets:** [FindIt, FindItAgain, and RTM](https://drive.google.com/drive/folders/1HkzytEz8BM7p2QxiyKZYQWSYtZbW_HMu?usp=sharing)
