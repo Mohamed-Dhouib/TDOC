@@ -1,5 +1,5 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2602.17322-b31b1b.svg)](https://arxiv.org/abs/2602.17322)
-# Leveraging Contrastive Learning for a Similarity-Guided Tampered Document Data Generation Pipeline
+# TDOC: Document Tampering Detection and Localization Dataset
 
 Official repository for the paper "Leveraging Contrastive Learning for a Similarity-Guided Tampered Document Data Generation Pipeline". This work was originally accepted to CVPR 2026 Findings and is currently being extended and refined for resubmission to a later conference.
 
@@ -9,10 +9,10 @@ TDOC addresses **document forgery detection and localization**, **document tampe
 
 ## Resources
 
-- Generated pretraining dataset TDoc-2.8M: `https://huggingface.co/datasets/MohamedDhouib1/TDoc-2.8M`
-- Pretrained and finetuned weights: `https://drive.google.com/drive/folders/1txtCMr2ZGq1LYHclrMip3I3tOmeHN5IH?usp=sharing`
-- Finetuning datasets (FindIt, FindItAgain, RTM): `https://drive.google.com/drive/folders/1jtB9rmdUww_zJ6jGg5qrjujgRfLVv3vV?usp=sharing`
-- Evaluation datasets (FindIt, FindItAgain, RTM): `https://drive.google.com/drive/folders/1HkzytEz8BM7p2QxiyKZYQWSYtZbW_HMu?usp=sharing`
+- **Dataset:** [TDoc-2.8M document tampering detection and localization dataset](https://huggingface.co/datasets/MohamedDhouib1/TDoc-2.8M)
+- **Model weights:** [Pretrained and finetuned weights](https://drive.google.com/drive/folders/1txtCMr2ZGq1LYHclrMip3I3tOmeHN5IH?usp=sharing)
+- **Finetuning datasets:** [FindIt, FindItAgain, and RTM](https://drive.google.com/drive/folders/1jtB9rmdUww_zJ6jGg5qrjujgRfLVv3vV?usp=sharing)
+- **Evaluation datasets:** [FindIt, FindItAgain, and RTM](https://drive.google.com/drive/folders/1HkzytEz8BM7p2QxiyKZYQWSYtZbW_HMu?usp=sharing)
 
 ## Download and Extract the Dataset
 
